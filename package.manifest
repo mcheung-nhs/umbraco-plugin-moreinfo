@@ -1,0 +1,17 @@
+﻿{
+  "gridEditors": [
+    {
+      "name": "More Info",
+      "alias": "more_info",
+      "view": "/app_plugins/UmbracoMoreInfo/views/more_info.html",
+      "render": "/app_plugins/UmbracoMoreInfo/views/more_info.cshtml",
+      "icon": "icon-multiple-windows"
+    }
+  ],
+  "javascript": [
+    "/app_plugins/UmbracoMoreInfo/js/more_info.controller.js"
+  ],
+  "css": [
+    "/app_plugins/UmbracoMoreInfo/css/more_info.css"
+  ]
+}

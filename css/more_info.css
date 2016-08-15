@@ -1,0 +1,20 @@
+.more-info {
+  padding: 0;
+  border: 1px solid #2e8aea;
+}
+.more-info .umb-control-bar.more-info-plugin-header {
+  height: 25px;
+  cursor: move;
+  opacity: 1;
+}
+.umb-grid .umb-control.-active .more-info {
+  padding: 15px 0 0 0 0;
+  border: 0;
+}
+.umb-grid .umb-control.-active .more-info .umb-control {
+  border: 1px solid #2e8aea;
+  margin-top: 15px;
+}
+.umb-grid .umb-control.-active .more-info .more-info-plugin-header.umb-control-bar {
+  display: none;
+}

@@ -1,0 +1,53 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+
+<h2>@Model.Header</h2>
+
+@Html.Raw(@Model.Intro)
+
+<details role="group"@DetailsOpenHelper()>
+  <summary class="moreinfo" @AriaExpandedHelper() tabindex="0" aria-controls="details-@Model.UniqueId" role="button">
+  @if (Model.MoreText != null && !String.IsNullOrEmpty(Convert.ToString(Model.MoreText)))
+  {
+    <span>@Model.MoreText</span>
+  }
+  else
+  {
+    <span>More information</span>
+  }
+  </summary>
+  <div id="details-@Model.UniqueId" @AriaHiddenHelper()>
+    @Html.Raw(@Model.Body)
+  </div>
+</details>
+
+@helper DetailsOpenHelper()
+{
+if (Model != null && Model.Open != false)
+{
+    @:open
+  }
+}
+
+@helper AriaExpandedHelper()
+{
+if (Model != null && Model.Open != true)
+{
+    @:aria-expanded="false"
+  }
+else
+{
+    @:aria-expanded="true"
+  }
+}
+
+@helper AriaHiddenHelper()
+{
+if (Model != null && Model.Open != true)
+  {
+    @:aria-hidden="true"
+  }
+else
+  {
+    @:aria-hidden="false"
+  }
+}

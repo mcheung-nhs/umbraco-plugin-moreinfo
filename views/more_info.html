@@ -1,0 +1,113 @@
+<div class="more-info">
+    <div class="more-info-plugin-header umb-grid umb-control-bar">
+        {{control.PluginHeader}}
+    </div>
+    <div ng-controller="more_info.controller">
+        <div class="more-info-header umb-grid umb-control">
+            <div class="more-info-header-header umb-grid umb-control-bar">
+                More information section header
+            </div>
+            <textarea rows="1"
+                      umb-auto-resize
+                      umb-auto-focus
+                      class="textstring input-block-level" id="{{control.uniqueId}}_header"
+                      ng-model="control.Header"
+                      ng-attr-style="{{control.editor.config.style}}" placeholder="Header text"></textarea>
+        </div>
+        <div class="more-info-body umb-grid umb-control">
+            <div class="more-info-body-header umb-grid umb-control-bar">
+                Intro
+            </div>
+            <div ng-controller="Umbraco.PropertyEditors.Grid.RichTextEditorController as vm">
+                <div grid-rte
+                     rows="5"
+                     configuration="model.config.rte"
+                     value="control.Intro"
+                     unique-id="control.$uniqueId + 1"
+                     on-link-picker-click="vm.openLinkPicker"
+                     on-media-picker-click="vm.openMediaPicker"
+                     on-embed-click="vm.openEmbed">
+                </div>
+
+                <umb-overlay ng-if="vm.linkPickerOverlay.show"
+                             model="vm.linkPickerOverlay"
+                             position="right"
+                             view="vm.linkPickerOverlay.view">
+                </umb-overlay>
+
+                <umb-overlay ng-if="vm.mediaPickerOverlay.show"
+                             model="vm.mediaPickerOverlay"
+                             position="right"
+                             view="vm.mediaPickerOverlay.view">
+                </umb-overlay>
+
+                <umb-overlay ng-if="vm.embedOverlay.show"
+                             model="vm.embedOverlay"
+                             position="right"
+                             view="vm.embedOverlay.view">
+                </umb-overlay>
+
+            </div>
+        </div>
+        <div class="more-info-footer umb-grid umb-control">
+            <div class="more-info-footer-header umb-grid umb-control-bar">
+                More information label
+            </div>
+            <textarea rows="1"
+                      umb-auto-resize
+                      class="textstring input-block-level" id="{{control.uniqueId}}_moreinfolabel"
+                      ng-model="control.MoreText"
+                      ng-attr-style="{{control.editor.config.style}}" placeholder="More information label"></textarea>
+        </div>
+
+        <div class="more-info-body umb-grid umb-control">
+            <div class="more-info-body-header umb-grid umb-control-bar">
+                More information body text
+            </div>
+            <div ng-controller="Umbraco.PropertyEditors.Grid.RichTextEditorController as vm">
+                <div grid-rte
+                     rows="5"
+                     configuration="model.config.rte"
+                     value="control.Body"
+                     unique-id="control.$uniqueId + 2"
+                     on-link-picker-click="vm.openLinkPicker"
+                     on-media-picker-click="vm.openMediaPicker"
+                     on-embed-click="vm.openEmbed">
+                </div>
+
+                <umb-overlay ng-if="vm.linkPickerOverlay.show"
+                             model="vm.linkPickerOverlay"
+                             position="right"
+                             view="vm.linkPickerOverlay.view">
+                </umb-overlay>
+
+                <umb-overlay ng-if="vm.mediaPickerOverlay.show"
+                             model="vm.mediaPickerOverlay"
+                             position="right"
+                             view="vm.mediaPickerOverlay.view">
+                </umb-overlay>
+
+                <umb-overlay ng-if="vm.embedOverlay.show"
+                             model="vm.embedOverlay"
+                             position="right"
+                             view="vm.embedOverlay.view">
+                </umb-overlay>
+
+            </div>
+        </div>
+
+
+        <div class="more-info-parent-id umb-grid umb-control">
+            <div class="more-info-footer-header umb-grid umb-control-bar">
+                Open by default?
+            </div>
+
+            <input 
+                   type="checkbox"
+                   id="{{control.uniqueId}}_openclose"
+                   ng-model="control.Open"
+                   checked="checked" />
+
+        </div>
+    </div>
+</div>
