@@ -1,6 +1,6 @@
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
 
-<h2>@Model.Header</h2>
+<h2 class="content__h2 @SeparatorHelper()">@Model.Header</h2>
 
 @Html.Raw(@Model.Intro)
 
@@ -20,22 +20,30 @@
   </div>
 </details>
 
+@helper SeparatorHelper()
+{
+  if (Model != null && Model.Separator != false)
+  {
+    @:content__h2--separator
+  }
+}
+
 @helper DetailsOpenHelper()
 {
-if (Model != null && Model.Open != false)
-{
+  if (Model != null && Model.Open != false)
+  {
     @:open
   }
 }
 
 @helper AriaExpandedHelper()
 {
-if (Model != null && Model.Open != true)
-{
+  if (Model != null && Model.Open != true)
+  {
     @:aria-expanded="false"
   }
-else
-{
+  else
+  {
     @:aria-expanded="true"
   }
 }

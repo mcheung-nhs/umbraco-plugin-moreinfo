@@ -1,20 +1,9 @@
-.more-info {
-  padding: 0;
-  border: 1px solid #2e8aea;
-}
-.more-info .umb-control-bar.more-info-plugin-header {
-  height: 25px;
-  cursor: move;
-  opacity: 1;
-}
-.umb-grid .umb-control.-active .more-info {
-  padding: 15px 0 0 0 0;
-  border: 0;
-}
-.umb-grid .umb-control.-active .more-info .umb-control {
-  border: 1px solid #2e8aea;
-  margin-top: 15px;
-}
-.umb-grid .umb-control.-active .more-info .more-info-plugin-header.umb-control-bar {
-  display: none;
-}
+.u-hide {display:none !important;}
+.o-row {margin:10px;}
+.o-section {border:2px solid #2e8aea;}
+.c-section {border:1px solid black;}
+.c-section__header {margin-top:20px;}
+.c-section__body, .mce-edit-area iframe {border:1px solid #cfcfcf !important; box-sizing:border-box;}
+.c-section__body.textstring {font-size:18px; font-weight:bold;}
+.c-label {font-size:16px; font-weight:bold; margin-right:20px}
+.c-checkbox {height:16px; width:16px !important;}
